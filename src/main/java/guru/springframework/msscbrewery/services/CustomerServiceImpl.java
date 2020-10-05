@@ -18,7 +18,9 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerDto saveNewCustomer(CustomerDto customerDto) {
-        return null;
+        return CustomerDto.builder()
+                .id(UUID.randomUUID())
+                .build();
     }
 
     @Override

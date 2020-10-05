@@ -28,10 +28,10 @@ public class CustomerController {
     public ResponseEntity postCustomer(@RequestBody CustomerDto customerDto){
         CustomerDto savesDto = customerService.saveNewCustomer(customerDto);
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Location", "/api/v1/customer/" + savesDto.getId());
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.add("Location", "/api/v1/customer/" + savesDto.getId().toString());
 
-        return new ResponseEntity(headers, HttpStatus.CREATED);
+        return new ResponseEntity(httpHeaders, HttpStatus.CREATED);
     }
 
     @PutMapping("/{customerId}")
