@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Timestamp;
 import java.util.UUID;
 
 @Data
@@ -15,4 +16,7 @@ public class Customer {
 
     private UUID id;
     private String customerName;
+
+    private Timestamp createdDate;
+    private  Timestamp lastModifiedDate;
 }
